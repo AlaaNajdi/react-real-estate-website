@@ -1,0 +1,23 @@
+ img{
+  width: 200px;
+  align-items: center;
+  }
+ .properties{
+display: grid;
+grid-template-columns: repeat(3,1fr);
+gap: 1rem;
+ }
+  .property{
+background-color: antiquewhite;
+
+  }
+  @media screen and (max-width:768px){
+    .properties{
+grid-template-columns: repeat(2,1fr);
+ }
+  }
+  @media screen and (max-width:600px){
+    .properties{
+grid-template-columns: repeat(1,1fr);
+ }
+  }
