@@ -3,12 +3,13 @@ import Property from "./Property";
 import Cart from "../components/cart/Cart";
 
 const Properties = (props) => {
-    const { properties,onDeleteofcart } = props; 
+    const { properties,onDeleteofcart,onhandleupdateproperty } = props; 
     return (
         <section className="properties">
             {/* <Cart /> */}
             {properties.map((property) => (
-                <Property property={property} onDeleteofcart={onDeleteofcart} key={property.id} /> 
+                <Property property={property} onDeleteofcart={onDeleteofcart}
+                onhandleupdateproperty={onhandleupdateproperty} key={property.id} /> 
             ))}
         </section>
     );

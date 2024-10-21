@@ -20,7 +20,7 @@ const PropertyImage = ({ image, title }) => {
 
 
 const Property = (props) => {
-  const{property,onDeleteofcart}=props;
+  const{property,onDeleteofcart,onhandleupdateproperty}=props;
 const{id,image,title,price,description} =property;
 
 const[cartpropertycount,setcartpropertycount]=useState(0);
@@ -30,6 +30,9 @@ const addtocart=(property)=>{
 };
 const deleteofcart=(id)=>{
   onDeleteofcart(id);
+};
+const updatetocart=(property)=>{
+  onhandleupdateproperty(props.property);
 };
 
   return (

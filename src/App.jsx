@@ -1,39 +1,66 @@
-import React, { useState } from "react";
-import Properties from "../components/Properties";
+import React, { useState } from 'react';
+import Properties from '../components/Properties';
 import { properties } from './data';
-import Counter from "../components/Counter";
-import Cart from "../components/cart/Cart";
-import AddPropery from "../components/AddPropery";
-
+import AddProperty from '../components/AddProperty';
+import AddCategory from '../components/category/AddCategory';
+// import UpdateProperty from '../components/UpdateProperty';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer} from 'react-toastify';
+import { Cloudinary } from '@cloudinary/url-gen';
+import { auto } from '@cloudinary/url-gen/actions/resize';
+import { autoGravity } from '@cloudinary/url-gen/qualifiers/gravity';
+import { AdvancedImage } from '@cloudinary/react';
 
 export const App = () => {
-    const[propertiess,setproperties]=useState(properties);
-    //1- creat fun
-const handleaddproperty = (newproperty)=>{
-setproperties((prevProperties)=>{
-    return[...prevProperties,newproperty];
-});
-};
+  const [propertiess, setproperties] = useState(properties);
+  // const [updatedata, setupdatedata] = useState(null);
 
-const deleteofcart=(id)=>{
-    const filterproperty=propertiess.filter(property=>property.id!==id);
+  const handleaddproperty = (newproperty) => {
+    setproperties((prevProperties) => {
+      return [...prevProperties, newproperty];
+    });
+  };
+
+  const deleteofcart = (id) => {
+    const filterproperty = propertiess.filter((property) => property.id !== id);
     setproperties(filterproperty);
-}
+  };
 
+  const handleupdateproperty = (property) => {
+    setupdatedata(property);
+  };
 
-    //2- pass the fun as props
-    return (
-        <div>
-            <AddPropery onhandleaddproperty={handleaddproperty}/>
-            {/* <Counter/> */}
-            {/* <Cart/> */}
-            {properties.length > 0 ? (
-                <Properties properties={propertiess} onDeleteofcart={deleteofcart}/>
-            ) : (
-                'no properties are available'
-            )}
-        </div>
-    );
-}
+  // const updatePropertyHandler = (updatedProperty) => {
+  //   setproperties((prevProperties) =>
+  //     prevProperties.map((property) =>
+  //       property.id === updatedProperty.id ? updatedProperty : property
+  //     )
+  //   );
+  //   setupdatedata(null); // Clear update form after submission
+  // };
+
+  return (
+    <div>
+      {/* <AddCategory/> */}
+      <ToastContainer/>
+      <AddProperty onhandleaddproperty={handleaddproperty} />
+      {/* {updatedata && (
+        <UpdateProperty
+          property={updatedata}
+          onUpdateProperty={updatePropertyHandler}
+        />
+      )} */}
+      {/* {propertiess.length > 0 ? (
+        <Properties
+          properties={propertiess}
+          onDeleteofcart={deleteofcart}
+          onhandleupdateproperty={handleupdateproperty}
+        />
+      ) : (
+        'No properties are available'
+      )} */}
+    </div>
+  );
+};
 
 export default App;
