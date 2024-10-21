@@ -1,34 +1,31 @@
 import React, { useState } from 'react';
+
 import Properties from '../components/Properties';
 import { properties } from './data';
 import AddProperty from '../components/AddProperty';
-import AddCategory from '../components/category/AddCategory';
 // import UpdateProperty from '../components/UpdateProperty';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer} from 'react-toastify';
-import { Cloudinary } from '@cloudinary/url-gen';
-import { auto } from '@cloudinary/url-gen/actions/resize';
-import { autoGravity } from '@cloudinary/url-gen/qualifiers/gravity';
-import { AdvancedImage } from '@cloudinary/react';
 
-export const App = () => {
-  const [propertiess, setproperties] = useState(properties);
+
+    export const App = () => {
+    const [propertiess, setproperties] = useState(properties);
   // const [updatedata, setupdatedata] = useState(null);
 
-  const handleaddproperty = (newproperty) => {
+    const handleaddproperty = (newproperty) => {
     setproperties((prevProperties) => {
-      return [...prevProperties, newproperty];
+    return [...prevProperties, newproperty];
     });
-  };
+    };
 
-  const deleteofcart = (id) => {
+    const deleteofcart = (id) => {
     const filterproperty = propertiess.filter((property) => property.id !== id);
     setproperties(filterproperty);
-  };
+    };
 
-  const handleupdateproperty = (property) => {
+    const handleupdateproperty = (property) => {
     setupdatedata(property);
-  };
+    };
 
   // const updatePropertyHandler = (updatedProperty) => {
   //   setproperties((prevProperties) =>
@@ -41,26 +38,23 @@ export const App = () => {
 
   return (
     <div>
-      {/* <AddCategory/> */}
-      <ToastContainer/>
-      <AddProperty onhandleaddproperty={handleaddproperty} />
-      {/* {updatedata && (
-        <UpdateProperty
-          property={updatedata}
-          onUpdateProperty={updatePropertyHandler}
-        />
-      )} */}
-      {/* {propertiess.length > 0 ? (
-        <Properties
-          properties={propertiess}
-          onDeleteofcart={deleteofcart}
-          onhandleupdateproperty={handleupdateproperty}
-        />
-      ) : (
-        'No properties are available'
-      )} */}
+    <ToastContainer/>
+    <AddProperty onhandleaddproperty={handleaddproperty} />
+    {/* {updatedata && (
+    <UpdateProperty
+    property={updatedata}
+    onUpdateProperty={updatePropertyHandler}
+    />
+    )} */}
+    {propertiess.length > 0 ? (
+    <Properties
+    properties={propertiess}
+    onDeleteofcart={deleteofcart}
+    onhandleupdateproperty={handleupdateproperty}
+    />
+    ) : (
+    'No properties are available'
+    )}
     </div>
   );
-};
-
-export default App;
+};export default App;
