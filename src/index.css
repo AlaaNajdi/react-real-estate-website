@@ -1,23 +1,359 @@
- img{
-  width: 200px;
-  align-items: center;
-  }
- .properties{
-display: grid;
-grid-template-columns: repeat(3,1fr);
-gap: 1rem;
- }
-  .property{
-background-color: antiquewhite;
+/* تغيير لون الخلفية وتنسيق الروابط */
+.navbar-custom {
+  background-image: url("1.jpg"); /* لون خلفية مخصص */
+  padding: 3rem;
+  background-size: cover;
+}
 
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+  color: #6e1a5c !important; /* لون النص */
+  font-weight: bold;
+}
+
+.navbar-custom .nav-link:hover {
+  color: #ffde59 !important; /* لون عند التمرير */
+}
+
+.navbar-custom .dropdown-menu {
+  background-color: #96b4d8;
+  border: none;
+  font-size: 0.5rem;
+}
+
+/* تأثير عند تمرير الماوس على عناصر القائمة المنسدلة */
+.navbar-custom .dropdown-item:hover {
+  background-color: #ffde59;
+  color: #c8cbcd;
+  transition: background-color 0.3s ease;
+}
+
+/* تأثير لتغيير زر التبديل (Toggle) */
+.navbar-custom .navbar-toggler {
+  border-color: #ffde59;
+}
+
+.navbar-custom .navbar-toggler-icon {
+  background-color: #ffde59;
+}
+/* مسافات إضافية بين الروابط */
+.navbar-custom .nav-link {
+  margin-right: 1.5rem;
+}
+.navbar a,
+.navbar-brand {
+  font-size: 2.1rem; /* يمكنك ضبط القيمة حسب الحجم الذي تريده */
+}
+.nav-link-custom {
+  color: #6e1a5c; /* يمكنك تخصيص اللون الذي تريده هنا */
+  text-decoration: none; /* لإزالة الخط السفلي */
+  font-weight: bold;
+}
+.nav-link-custom:hover {
+  color: #555; /* لون عند التمرير */
+}
+.nav-link-space {
+  margin-right: 15px; /* يمكنك تغيير 15px حسب المسافة التي تريدها */
+}
+#home-container h1 {
+  text-align: center; /* لتوسيع النص في المنتصف */
+  font-size: 2.5rem; /* لتكبير حجم الخط */
+  margin: 20px 0; /* لإضافة مسافة من الأعلى والأسفل */
+}
+
+.container1 {
+  display: flex;
+  justify-content: center; /* لتوسيع النموذج في المنتصف أفقيًا */
+  align-items: center; /* لتوسيع النموذج في المنتصف عموديًا */
+}
+
+Form {
+  width: 100%; /* عرض النموذج 100% داخل الحاوية */
+  max-width: 1000px; /* تحديد الحد الأقصى للعرض */
+  padding: 20px; /* إضافة مساحة داخلية للنموذج */
+  border: 1px solid #ccc; /* إضافة حد للنموذج */
+  border-radius: 10px; /* جعل الزوايا دائرية */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* إضافة ظل للنموذج */
+  background-color: #fbf5e2; /* لون خلفية للنموذج */
+}
+
+.form-control {
+  transition: border-color 0.3s; /* إضافة تأثير عند تغيير اللون */
+}
+
+.form-control:focus {
+  border-color: #6e1a5c; /* تغيير لون الحدود عند التركيز */
+}
+
+/* From Uiverse.io by kleenpulse */
+.add-button {
+  --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
+  --border-width: 0.125em;
+  --curve-size: 0.5em;
+  --blur: 30px;
+  --bg: #080312;
+  --color: #afffff;
+  color: var(--color);
+  cursor: pointer;
+  /* use position: relative; so that BG is only for .btn */
+  position: relative;
+  isolation: isolate;
+  display: inline-grid;
+  place-content: center;
+  padding: 0.5em 1.5em;
+  font-size: 17px;
+  border: 0;
+  text-transform: uppercase;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+  clip-path: polygon(
+    /* Top-left */ 0% var(--curve-size),
+    var(--curve-size) 0,
+    /* top-right */ 100% 0,
+    100% calc(100% - var(--curve-size)),
+    /* bottom-right 1 */ calc(100% - var(--curve-size)) 100%,
+    /* bottom-right 2 */ 0 100%
+  );
+  transition: color 250ms;
+}
+
+.add-button::after,
+.add-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.add-button::before {
+  background: var(--border-color);
+  background-size: 300% 300%;
+  animation: move-bg7234 5s ease infinite;
+  z-index: -2;
+}
+
+@keyframes move-bg7234 {
+  0% {
+    background-position: 31% 0%;
   }
-  @media screen and (max-width:768px){
-    .properties{
-grid-template-columns: repeat(2,1fr);
- }
+
+  50% {
+    background-position: 70% 100%;
   }
-  @media screen and (max-width:600px){
-    .properties{
-grid-template-columns: repeat(1,1fr);
- }
+
+  100% {
+    background-position: 31% 0%;
   }
+}
+
+.add-button::after {
+  background: var(--bg);
+  z-index: -1;
+  clip-path: polygon(
+    /* Top-left */ var(--border-width)
+      calc(var(--curve-size) + var(--border-width) * 0.5),
+    calc(var(--curve-size) + var(--border-width) * 0.5) var(--border-width),
+    /* top-right */ calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width))
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    /* bottom-right 1 */
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width)),
+    /* bottom-right 2 */ var(--border-width) calc(100% - var(--border-width))
+  );
+  transition: clip-path 500ms;
+}
+
+.add-button:where(:hover, :focus)::after {
+  clip-path: polygon(
+    /* Top-left */ calc(100% - var(--border-width))
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    calc(100% - var(--border-width)) var(--border-width),
+    /* top-right */ calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width))
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    /* bottom-right 1 */
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width)),
+    /* bottom-right 2 */
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width))
+  );
+  transition: 200ms;
+}
+
+.add-button:where(:hover, :focus) {
+  color: #fff;
+}
+
+.property-card {
+  border: none; /* إزالة الحدود */
+  border-radius: 10px; /* زوايا دائرية */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* إضافة ظل */
+  transition: transform 0.2s; /* تأثير التحويل */
+  margin: 10px;
+}
+
+.property-card:hover {
+  transform: translateY(-5px); /* رفع الكارد عند التحويم */
+}
+
+.property-card img {
+  border-radius: 10px 10px 0 0; /* زوايا دائرية للصورة */
+}
+
+.delete-button {
+  margin-top: 10px; /* إضافة مسافة فوق الزر */
+  width: 100%; /* عرض كامل للزر */
+  transition: background-color 0.3s, transform 0.2s; /* تأثير التحويل للزر */
+}
+
+.delete-button:hover {
+  background-color: #c82333; /* لون خلفية الزر عند التحويم */
+  transform: scale(1.05); /* تكبير الزر عند التحويم */
+}
+
+.property-images {
+  display: flex; /* استخدام flexbox لعرض الصور بجانب بعضها */
+  overflow-x: auto; /* لإضافة تمرير أفقي إذا كانت الصور كثيرة */
+}
+
+.property-images img {
+  width: 100px; /* عرض ثابت للصور */
+  height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+  margin-right: 10px; /* تباعد بين الصور */
+  border-radius: 5px; /* إضافة حواف دائرية */
+  object-fit: "cover";
+}
+
+.footer {
+  background-color: #333; /* لون الخلفية */
+  color: #fff; /* لون النص */
+  padding: 20px 0; /* الحشوة */
+  text-align: center; /* محاذاة النص للوسط */
+  position: relative; /* تحديد الموضع */
+  bottom: 0; /* تثبيت في الأسفل */
+  width: 100%; /* عرض كامل */
+}
+
+.footer-content {
+  max-width: 1200px; /* عرض أقصى */
+  margin: 0 auto; /* محاذاة للوسط */
+  padding: 0 20px; /* حشوة داخلية */
+}
+
+.social-icons a {
+  margin: 0 10px; /* المسافة بين الأيقونات */
+  color: #fff; /* لون الأيقونات */
+  text-decoration: none; /* إزالة التسطير */
+}
+
+.social-icons a:hover {
+  text-decoration: underline; /* تسطير عند التمرير */
+}
+
+/* From Uiverse.io by barisdogansutcu */
+.love-heart:before,
+#switch {
+  display: none;
+}
+
+.love-heart,
+.love-heart::after {
+  border-color: hsl(231deg 28% 86%);
+  border: 1px solid;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  width: 10px;
+  height: 8px;
+  border-bottom: 0;
+}
+
+.round {
+  position: absolute;
+  z-index: 1;
+  width: 8px;
+  height: 8px;
+  background: hsl(0deg 0% 100%);
+  box-shadow: rgb(0 0 0 / 24%) 0px 0px 4px 0px;
+  border-radius: 100%;
+  left: 0px;
+  bottom: -1px;
+  transition: all 0.5s ease;
+  animation: check-animation2 0.5s forwards;
+}
+
+input:checked + label .round {
+  transform: translate(0px, 0px);
+  animation: check-animation 0.5s forwards;
+  background-color: hsl(0deg 0% 100%);
+}
+
+@keyframes check-animation {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(0px, 7px);
+  }
+
+  100% {
+    transform: translate(7px, 7px);
+  }
+}
+
+@keyframes check-animation2 {
+  0% {
+    transform: translate(7px, 7px);
+  }
+
+  50% {
+    transform: translate(0px, 7px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+.love-heart {
+  box-sizing: border-box;
+  position: relative;
+  transform: rotate(-45deg) translate(-50%, -33px) scale(2); /* تعديل الحجم هنا */
+  display: block;
+  border-color: hsl(231deg 28% 86%);
+  cursor: pointer;
+  top: 0;
+}
+
+input:checked + .love-heart,
+input:checked + .love-heart::after,
+input:checked + .love-heart .bottom {
+  border-color: hsl(347deg 81% 61%);
+  box-shadow: inset 6px -5px 0px 2px hsl(347deg 99% 72%);
+}
+
+.love-heart::after,
+.love-heart .bottom {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  border-color: hsl(231deg 28% 86%);
+}
+
+.love-heart::after {
+  right: -9px;
+  transform: rotate(90deg);
+  top: 7px;
+}
+
+.love-heart .bottom {
+  width: 11px;
+  height: 11px;
+  border-left: 1px solid;
+  border-bottom: 1px solid;
+  border-color: hsl(231deg 28% 86%);
+  left: -1px;
+  top: 5px;
+  border-radius: 0px 0px 0px 5px;
+}
