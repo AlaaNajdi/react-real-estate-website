@@ -1,5 +1,5 @@
 # deployment link
-- https://admirable-biscuit-80d137.netlify.app/
+- https://effulgent-buttercream-2305f3.netlify.app/
 # React Real Estate App
 
 ## How to start the Assignment
