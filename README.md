@@ -1,4 +1,7 @@
 # PR
+# Deployment LINK
+- https://dancing-tarsier-a6198c.netlify.app/
+
 # React Real Estate App
 
 ## How to start the Assignment
